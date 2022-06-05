@@ -1,3 +1,3 @@
-# Week1
+# StarCamp
 Simple exercises
 Many examples
