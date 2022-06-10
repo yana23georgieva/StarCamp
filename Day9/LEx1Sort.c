@@ -8,9 +8,9 @@
 
 typedef struct
 {
-    char title[150];
-    char author[100];
-    int pages;
+    char title[151];
+    char author[101];
+    unsigned pages;
     double price;
 }Book;
 
@@ -167,7 +167,7 @@ void print(Book *books)
     {
         printf("Title: %s, ", books[i].title);
         printf("Author: %s, ", books[i].author);
-        printf("Pages: %d, ", books[i].pages);
+        printf("Pages: %u, ", books[i].pages);
         printf("Price: %.2lf\n", books[i].price);
     }
 }
