@@ -17,7 +17,7 @@ typedef struct
 int randint(int,int);
 double randReal(double,double);
 char* randomName(char *name);
-void print(Book *books);
+void print(const Book *books);
 int compareTitle(const void *str1p, const void *str2p);
 int compareTitleDesc(const void *str1p, const void *str2p);
 int compareAuthor(const void *str1p, const void *str2p);
@@ -61,10 +61,10 @@ int main(){
 
 int compareTitle(const void *str1p, const void *str2p)
 {
-    Book b1 = *(Book *)str1p;
-    Book b2 = *(Book *)str2p;
+    Book *b1 = (Book *)str1p;
+    Book *b2 = (Book *)str2p;
 
-    return strcmp(b1.title, b2.title);
+    return strcmp(b1->title, b2->title);
 }
 
 int compareTitleDesc(const void *str1p, const void *str2p)
@@ -77,10 +77,10 @@ int compareTitleDesc(const void *str1p, const void *str2p)
 
 int compareAuthor(const void *str1p, const void *str2p)
 {
-    Book b1 = *(Book *)str1p;
-    Book b2 = *(Book *)str2p;
+    Book *b1 = (Book *)str1p;
+    Book *b2 = (Book *)str2p;
 
-    return strcmp(b1.author, b2.author);
+    return strcmp(b1->author, b2->author);
 }
 
 int compareAuthorDesc(const void *str1p, const void *str2p)
@@ -161,14 +161,14 @@ char* randomName(char *name)
     return name;
 }
 
-void print(Book *books)
+void print(const Book *books)
 {
     for(int i = 0; i < COUNT; i++)
     {
-        printf("Title: %s, ", books[i].title);
-        printf("Author: %s, ", books[i].author);
-        printf("Pages: %u, ", books[i].pages);
-        printf("Price: %.2lf\n", books[i].price);
+        printf("Title: %25s, ", books[i].title);
+        printf("Author: %25s, ", books[i].author);
+        printf("Pages: %4u, ", books[i].pages);
+        printf("Price: %4.2lf\n", books[i].price);
     }
 }
 
