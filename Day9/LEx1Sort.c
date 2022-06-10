@@ -112,7 +112,7 @@ int comparePrice(const void *str1p, const void *str2p)
     Book b1 = *(Book *)str1p;
     Book b2 = *(Book *)str2p;
 
-    if(fabs(b1.price - b2.price) < 0.01)
+    if(fabs(b1.price - b2.price) < 0.001)
     {
         return 0;
     }
@@ -128,7 +128,7 @@ int comparePriceDesc(const void *str1p, const void *str2p)
     Book b1 = *(Book *)str1p;
     Book b2 = *(Book *)str2p;
 
-    if(fabs(b1.price - b2.price) < 0.01)
+    if(fabs(b1.price - b2.price) < 0.001)
     {
         return 0;
     }
