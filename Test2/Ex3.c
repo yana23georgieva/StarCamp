@@ -31,7 +31,11 @@ int main()
         }
     }
 
-    printf("%s\n", number);
+    for (size_t i = 0; number[i] != '\0' && i < 501; i++)
+    {
+        printf("%c", number[i]);
+    }
+    putchar('\n');
     
     return 0;
 }
