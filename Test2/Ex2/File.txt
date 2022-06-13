@@ -1,0 +1,24 @@
+In the first step preprocessor takes the
+code and removes comments, replace all
+defines and add header files for all included
+libraries.
+After that the compiler converts the code
+into assembly. 
+In the next step assembly code is converted
+into object code.
+In the last step linker combine all object 
+files and resolve all unknown addresses.
+The result is executable file.
+
+The difference between static and dynamic 
+library is that in the static library
+all of the machine code is in the exe. 
+While in dynamic libraries starts their 
+work in run time of the program. The 
+advantages of dynamic library is that it 
+is load one time for all programs and it is
+easy to change. Their is no need to precompile
+all applications whixh contains this library.
+The disadvantages are that it needs a loader
+for the dynamic library and so operating 
+system. But saves memory.
