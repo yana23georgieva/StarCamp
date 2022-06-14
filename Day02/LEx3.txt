@@ -1,0 +1,2 @@
+cat numbers.txt|sort -n|head -n 1 -> min 
+cat numbers.txt|sort -r -n|head -n 1 -> max
