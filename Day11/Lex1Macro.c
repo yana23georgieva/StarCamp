@@ -32,4 +32,5 @@ int main(void)
     SWAP(a, b);
     printf("a = %d\n", a);
     printf("b = %d\n", b);
+    return 0;
 }
