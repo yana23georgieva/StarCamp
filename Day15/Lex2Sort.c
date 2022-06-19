@@ -15,6 +15,7 @@ typedef struct
 }Book;
 
 int randint(int,int);
+int compareTitle(const void *, const void *);
 double randReal(double,double);
 char* randomName(char *name);
 void print(Book *books, FILE *fpw);
@@ -34,6 +35,7 @@ int main(int argc, char** argv)
     }
 
     fread(books, sizeof(*books), COUNT, fpRead);
+    qsort(books, COUNT, sizeof(*books), compareTitle);
     fclose(fpRead); 
 
     //Write
@@ -81,6 +83,14 @@ void print(Book *books, FILE *fpw)
         fprintf(fpw, "Pages: %4u, ", books[i].pages);
         fprintf(fpw, "Price: %4.2lf\n", books[i].price);
     }
+}
+
+int compareTitle(const void *str1p, const void *str2p)
+{
+    Book b1 = *(Book *)str1p;
+    Book b2 = *(Book *)str2p;
+
+    return strcmp(b1.title, b2.title);
 }
 
 int randint(int min, int max)
